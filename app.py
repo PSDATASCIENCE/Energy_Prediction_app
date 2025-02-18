@@ -9,7 +9,8 @@ import numpy as np
 st.set_page_config(page_title="Energy Consumption Prediction", page_icon="⚡", layout="centered")
 
 # Load the trained model
-model_path = r"C:\Users\praga\linear_regressor_model.pkl"  # Ensure the correct model path
+model_path = "linear_regressor_model.pkl"
+  # Ensure the correct model path
 with open(model_path, "rb") as model_file:
     model = pickle.load(model_file)
 
