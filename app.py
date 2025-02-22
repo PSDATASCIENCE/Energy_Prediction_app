@@ -5,12 +5,11 @@ import streamlit as st
 import pickle
 import numpy as np
 
-# Set a custom title and favicon for your app
+# Set page config
 st.set_page_config(page_title="Energy Consumption Prediction", page_icon="⚡", layout="centered")
 
-# Load the trained model
+# Load trained model
 model_path = "linear_regressor_model.pkl"
-  # Ensure the correct model path
 with open(model_path, "rb") as model_file:
     model = pickle.load(model_file)
 
@@ -19,34 +18,36 @@ st.title("🔋 Energy Consumption Prediction App")
 st.write("""
     Welcome to the Energy Consumption Prediction App! 
     Provide the following inputs to predict the total energy consumption (kWh).
-    """)
+""")
 
-# User inputs with improved labels
+# User inputs
 st.subheader("Input Parameters")
-temp = st.number_input("Temperature", min_value=10.0, max_value=50.0, value=25.0, step=0.5)
-humidity = st.number_input("Humidity", min_value=10.0, max_value=100.0, value=50.0, step=1.0)
+temp = st.number_input("Temperature (°C)", min_value=10.0, max_value=50.0, value=25.0, step=0.5)
+humidity = st.number_input("Humidity (%)", min_value=10.0, max_value=100.0, value=50.0, step=1.0)
 monthly_cbs = st.number_input("Monthly CBS", min_value=10, max_value=25, value=18, step=1)
 total = st.number_input("Total Direct Activities (TOTAL)", min_value=6000.0, max_value=8000.0, value=7000.0, step=100.0)
 total_direct_activities = st.number_input("Total Direct Activities", min_value=100000.0, max_value=500000.0, value=300000.0, step=5000.0)
 lag_1 = st.number_input("Lag 1 Value (Lag_1)", min_value=150000.0, max_value=200000.0, value=180000.0, step=1000.0)
 
-
-# Prediction
-data = np.array([['temp','humidity', 'Monthly CBS','TOTAL','Total Direct Activities','Lag_1']])
-
-# Button to trigger prediction
+# Prediction button
 if st.button("🔮 Predict Energy Consumption"):
+    # Convert inputs to NumPy array (Ensure it's a 2D array)
+    data = np.array([[temp, humidity, monthly_cbs, total, total_direct_activities, lag_1]])
+
+    # Predict using model
     prediction = model.predict(data)
+
+    # Display result
     st.success(f"✨ **Predicted Energy Consumption:** {prediction[0]:.2f} kWh")
 
-# Footer with contact info or additional details
+# Footer
 st.markdown("""
     ---
     ⚡ **Note:** This app predicts energy consumption based on input parameters.
     For inquiries, contact us at **energy@prediction.com**.
 """)
 
-# Additional styling with CSS to enhance the visual experience
+# Custom CSS for better styling
 st.markdown("""
     <style>
         .stButton > button {
