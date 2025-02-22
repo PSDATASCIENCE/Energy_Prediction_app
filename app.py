@@ -23,7 +23,7 @@ st.write("""
 # User inputs
 st.subheader("Input Parameters")
 
-temp = st.number_input("Temperature", min_value=20.0, max_value=50.0, value=25.0, step=0.5)
+temp = st.number_input("Temperature", min_value= 10.0, max_value=50.0, value=25.0, step=0.5)
 humidity = st.number_input("Humidity", min_value=10.0, max_value=200.0, value=50.0, step=5.0)
 monthly_cbs = st.number_input("Monthly CBS", min_value=14, max_value=20, value=18, step=1)
 total = st.number_input("Total Direct Activities (TOTAL)", min_value=5800.0, max_value=7500.0, value=7000.0, step=100.0)
