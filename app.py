@@ -30,9 +30,13 @@ total_direct_activities = st.number_input("Total Direct Activities", min_value=1
 lag_1 = st.number_input("Lag 1 Value (Lag_1)", min_value=150000.0, max_value=200000.0, value=180000.0, step=1000.0)
 
 # Prediction button
+# Button to trigger prediction
 if st.button("🔮 Predict Energy Consumption"):
-    # Convert inputs to NumPy array (Ensure it's a 2D array)
-    data = np.array([[temp, humidity, monthly_cbs, total, total_direct_activities, lag_1]])
+    data = np.array([[temp, humidity, monthly_cbs, total, total_direct_activities, lag_1]])  # Numeric input array
+    prediction = model.predict(data)
+    st.success(f"✨ **Predicted Energy Consumption:** {prediction[0]:.2f} kWh")
+
+
 
     # Predict using model
     prediction = model.predict(data)
