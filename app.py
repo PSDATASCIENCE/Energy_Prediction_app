@@ -33,8 +33,7 @@ lag_1 = st.number_input("Lag 1 Value (Lag_1)", min_value=150000.0, max_value=200
 # Button to trigger prediction
 if st.button("🔮 Predict Energy Consumption"):
     data = np.array([[temp, humidity, monthly_cbs, total, total_direct_activities, lag_1]])  # Numeric input array
-    prediction = model.predict(data)
-    st.success(f"✨ **Predicted Energy Consumption:** {prediction[0]:.2f} kWh")
+   
 
 
 
