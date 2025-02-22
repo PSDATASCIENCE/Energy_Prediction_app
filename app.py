@@ -1,16 +1,10 @@
 import streamlit as st
-import numpy as np
 import pickle
+import numpy as np
 
-# Load the trained models
+# Load the trained model
 with open("linear_regressor_model.pkl", "rb") as file:
     lin_reg = pickle.load(file)
-
-with open("pca_model.pkl", "rb") as file:
-    pca = pickle.load(file)
-
-with open("lin_reg_pca_model.pkl", "rb") as file:
-    lin_reg_pca = pickle.load(file)
 
 # Streamlit UI
 st.title("Energy Consumption Prediction")
@@ -28,13 +22,7 @@ user_input = np.array([[temp, humidity, monthly_cbs, total, direct_activities, l
 
 # Prediction button
 if st.button("Predict Energy Consumption"):
-    # Option 1: Using Original Model (Without PCA)
     prediction = lin_reg.predict(user_input)[0]
-
-    # Option 2: Using PCA-Based Model
-    user_input_pca = pca.transform(user_input)  # Transform input to 2 features
-    prediction_pca = lin_reg_pca.predict(user_input_pca)[0]
-
+    
     st.subheader("Predicted Energy Consumption (kWh)")
-    st.write(f"🔹 **Without PCA:** {prediction:.2f} kWh")
-    st.write(f"🔹 **With PCA:** {prediction_pca:.2f} kWh")
+    st.write(f"{prediction:.2f} kWh")
