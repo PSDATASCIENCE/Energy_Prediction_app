@@ -23,30 +23,13 @@ st.write("""
 
 # User inputs with improved labels
 st.subheader("Input Parameters")
-temp_humidity = st.number_input(
-    "Temperature and Humidity Interaction (Temp_Humidity)",
-    min_value=30000.0, max_value=75000.0, value=50000.0, step=100.0
-)
-monthly_cbs = st.number_input(
-    "Monthly CBS", min_value=10, max_value=25, value=18, step=1
-)
-temp_cbs_interaction = st.number_input(
-    "Temperature and CBS Interaction (Temp_CBS_Interaction)",
-    min_value=500000.0, max_value=1500000.0, value=1200000.0, step=10000.0
-)
-temp_total_direct_activities = st.number_input(
-    "Temperature and Total Direct Activities (Temp_Total Direct Activities)",
-    min_value=32000000000.0, max_value=37000000000.0, value=35000000000.0, step=100000000.0
-)
-total = st.number_input(
-    "Total Direct Activities (TOTAL)", min_value=6000.0, max_value=8000.0, value=7000.0, step=100.0
-)
-lag_1 = st.number_input(
-    "Lag 1 Value (Lag_1)", min_value=150000.0, max_value=200000.0, value=180000.0, step=1000.0
-)
-lag_7 = st.number_input(
-    "Lag 7 Value (Lag_7)", min_value=140000.0, max_value=200000.0, value=170000.0, step=1000.0
-)
+temp = st.number_input("Temperature", min_value=10.0, max_value=50.0, value=25.0, step=0.5)
+humidity = st.number_input("Humidity", min_value=10.0, max_value=100.0, value=50.0, step=1.0)
+monthly_cbs = st.number_input("Monthly CBS", min_value=10, max_value=25, value=18, step=1)
+total = st.number_input("Total Direct Activities (TOTAL)", min_value=6000.0, max_value=8000.0, value=7000.0, step=100.0)
+total_direct_activities = st.number_input("Total Direct Activities", min_value=100000.0, max_value=500000.0, value=300000.0, step=5000.0)
+lag_1 = st.number_input("Lag 1 Value (Lag_1)", min_value=150000.0, max_value=200000.0, value=180000.0, step=1000.0)
+
 
 # Prediction
 data = np.array([['temp','humidity', 'Monthly CBS','TOTAL','Total Direct Activities','Lag_1']])
