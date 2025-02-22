@@ -23,9 +23,9 @@ st.write("""
 # User inputs
 st.subheader("Input Parameters")
 
-temp = st.number_input("Temperature", min_value=300.0, max_value=850.0, value=750.0, step=5.0)
-humidity = st.number_input("Humidity", min_value=1000.0, max_value=2400.0, value=1800.0, step=50.0)
-monthly_cbs = st.number_input("Monthly CBS", min_value=14, max_value=20, value=18, step=1)
+temp = st.number_input("Temperature", min_value= 15, max_value=50 value=750.0, step=5.0)
+humidity = st.number_input("Humidity", min_value=15, max_value=200, value=1800.0, step=50.0)
+monthly_cbs = st.number_input("Monthly CBS", min_value=14, max_value=26, value=18, step=1)
 total = st.number_input("Total Direct Activities (TOTAL)", min_value=1800.0, max_value=7500.0, value=7000.0, step=100.0)
 total_direct_activities = st.number_input("Total Direct Activities", min_value=11000.0, max_value=28000.0, value=25000.0, step=500.0)
 lag_1 = st.number_input("Lag 1 Value (Lag_1)", min_value=128000.0, max_value=204000.0, value=180000.0, step=1000.0)
