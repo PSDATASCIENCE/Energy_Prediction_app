@@ -27,7 +27,7 @@ temp = st.number_input("Temperature", min_value= 10.0, max_value=50.0, value=25.
 humidity = st.number_input("Humidity", min_value=10.0, max_value=200.0, value=50.0, step=5.0)
 monthly_cbs = st.number_input("Monthly CBS", min_value=14, max_value=20, value=18, step=1)
 total = st.number_input("Total Direct Activities (TOTAL)", min_value=5800.0, max_value=7500.0, value=7000.0, step=100.0)
-total_direct_activities = st.number_input("Total Direct Activities", min_value=21000.0, max_value=28000.0, value=25000.0, step=500.0)
+total_direct_activities = st.number_input("Total Direct Activities", min_value=15000.0, max_value=28000.0, value=25000.0, step=500.0)
 lag_1 = st.number_input("Lag 1 Value (Lag_1)", min_value=128000.0, max_value=204000.0, value=180000.0, step=1000.0)
 
 
