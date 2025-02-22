@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 
 # Load the trained models
-with open("lin_reg_model.pkl", "rb") as file:
+with open("linear_regressor_model.pkl", "rb") as file:
     lin_reg = pickle.load(file)
 
 with open("pca_model.pkl", "rb") as file:
