@@ -49,7 +49,7 @@ lag_7 = st.number_input(
 )
 
 # Prediction
-data = np.array([[temp_humidity, monthly_cbs, temp_cbs_interaction, temp_total_direct_activities, total, lag_1, lag_7]])
+data = np.array([['temp','humidity', 'Monthly CBS','TOTAL','Total Direct Activities','Lag_1']])
 
 # Button to trigger prediction
 if st.button("🔮 Predict Energy Consumption"):
