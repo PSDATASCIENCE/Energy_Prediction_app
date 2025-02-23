@@ -13,12 +13,12 @@ with open("linear_regressor_model.pkl", "rb") as model_file:
 st.title("Energy Consumption Prediction with PCA")
 
 # User inputs
-temp = st.number_input("Temperature (°C)", min_value=-10.0, max_value=50.0, step=0.1)
-humidity = st.number_input("Humidity (%)", min_value=0.0, max_value=100.0, step=0.1)
-monthly_cbs = st.number_input("Monthly CBS", min_value=0, max_value=50, step=1)
-total = st.number_input("TOTAL", min_value=0.0, max_value=100000.0, step=1.0)
-direct_activities = st.number_input("Total Direct Activities", min_value=0.0, max_value=10000.0, step=1.0)
-lag_1 = st.number_input("Lag_1", min_value=0.0, max_value=10000.0, step=1.0)
+temp = st.number_input("Temperature (°C)", min_value=-10.0, max_value=50.0, step=5)
+humidity = st.number_input("Humidity (%)", min_value=0.0, max_value=100.0, step=10)
+monthly_cbs = st.number_input("Monthly CBS", min_value=0, max_value=50, step=5)
+total = st.number_input("TOTAL", min_value=0.0, max_value=100000.0, step=50)
+direct_activities = st.number_input("Total Direct Activities", min_value=0.0, max_value=10000.0, step=100)
+lag_1 = st.number_input("Lag_1", min_value=0.0, max_value=10000000.0, step=1000)
 
 # Convert user input into a NumPy array
 user_input = np.array([[temp, humidity, monthly_cbs, total, direct_activities, lag_1]])
