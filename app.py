@@ -14,12 +14,12 @@ st.title("Energy Consumption Prediction with PCA")
 
 # User inputs
 # User Inputs
-temp = st.number_input("Temperature (°C)", min_value=-10.0, max_value=50.0, step=5.0)
-humidity = st.number_input("Humidity (%)", min_value=0.0, max_value=100.0, step=10.0)
-monthly_cbs = st.number_input("Monthly CBS", min_value=0, max_value=50, step=1)
+temp = st.number_input("Temperature (°C)", min_value=10.0, max_value=50.0, step=5.0)
+humidity = st.number_input("Humidity (%)", min_value=10.0, max_value=100.0, step=10.0)
+monthly_cbs = st.number_input("Monthly CBS", min_value=5, max_value=50, step=1)
 total = st.number_input("TOTAL", min_value=0.0, max_value=100000.0, step=100.0)
-direct_activities = st.number_input("Total Direct Activities", min_value=0.0, max_value=10000.0, step=100.0)
-lag_1 = st.number_input("Lag_1", min_value=0.0, max_value=1000000.0, step=10000.0)
+direct_activities = st.number_input("Total Direct Activities", min_value=0.0, max_value=1000000.0, step=100.0)
+lag_1 = st.number_input("Lag_1", min_value=0.0, max_value=10000000.0, step=10000.0)
 
 
 # Convert user input into a NumPy array
