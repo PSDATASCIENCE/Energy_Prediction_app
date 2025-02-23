@@ -6,7 +6,7 @@ import numpy as np
 with open("linear_regressor_model.pkl", "rb") as file:
     lin_reg = pickle.load(file)
 
-with open("pca_transform.pkl", "rb") as file:
+with open("pca_model.pkl", "rb") as file:
     pca = pickle.load(file)  # Load PCA model if used
 
 # Streamlit UI
